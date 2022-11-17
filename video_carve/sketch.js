@@ -50,7 +50,7 @@ function draw() {
 function vidLoad(){
 
   video.hide();
-  video.addCue(15, jumpToPage, "http://127.0.0.1:8887/01%20aframe%20p5%20ar%20lib/class/html%20css/carve.html");
+  video.addCue(15, jumpToPage, "carve.html");
  
 }
 
