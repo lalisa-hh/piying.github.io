@@ -50,7 +50,7 @@ function draw() {
 function vidLoad(){
 
   video.hide();
-  video.addCue(42, jumpToPage, "choose.html");
+  video.addCue(42, jumpToPage, "../choose.html");
  
 }
 
