@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <title>piying workshop</title>
+  <style type="text/css">
+
+    h1 {text-align:center;
+      color: #000000;
+    }
+    body {
+      background-color:#C0A182;
+      margin: 0 0 0 0;
+      padding: 0;
+      width: 110%;
+      height: 100%;
+    }
+
+    #sixImage{
+      margin: 0;
+      padding: 0;
+    }
+
+    #youxia{
+      position: absolute;
+      left: 98%;
+      top: 50%;
+      margin: 0;
+      width: 80px;
+      height: 110px;
+    }
+    #you{
+      position: absolute;
+      left: 98%;
+      top: 25%;
+      margin: 0;
+      width: 80px;
+      height: 110px;
+    }
+
+    #myImage{
+      position: absolute;
+      left: 10%;
+      top: 30%;
+      margin: 0;
+      width: 160px;
+      height: 160px;
+    }
+
+    #image_head{
+      position: absolute;
+      left: 15%;
+      top: 10%;
+      margin: 0;
+      width: 700px;
+      height: 700px;
+    }
+
+    #image_body{
+      position: absolute;
+      left: 1%;
+      top: 14%;
+      margin: 0;
+      width: 950px;
+      height: 1700px;
+    }
+
+    #previous_head{
+      position: absolute;
+      left: 90%;
+      top: 30%;
+      margin: 0;
+      width: 150px;
+      height: 150px;
+      color: rgba(0, 0, 0, 0);
+    }
+
+    #previous_body{
+      position: absolute;
+      left: 90%;
+      top: 60%;
+      margin: 0;
+      width: 150px;
+      height: 150px;
+      color: rgba(0, 0, 0, 0);
+    }
+
+    #button {
+      z-index: 10;
+      width: 222px;
+      height: 70px;
+      position: absolute;
+      bottom: 150px;
+      left: 50%;
+      -ms-transform: translate(-50%, 0);
+      transform: translate(-50%, 0);
+      background: rgba(213, 213, 213, 0.7);
+      border: none;
+      color: black;
+      padding: 13px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      font-size: 40px;
+      cursor: pointer;
+      border-radius: 30px;
+    }
+
+    #button:hover {
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+      border-radius: 30px;
+    }
+
+  </style>
+</head>
+
+
+<body>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+  <div id="sixImage">
+    <img src="choose pi.png" width="100%" height="100%">
+  </div>
+
+  <div id="youxia">
+    <img src="you.png" width="40%" height="40%">
+  </div>
+
+  <div id="you">
+    <img src="you.png" width="40%" height="40%">
+  </div>
+
+  <div id = "button">
+    我选好了
+  </div>
+
+  <div id="imageGallery_head">    
+    <img id="image_head" src="Hman.png"></div>
+    <div id="previous_head">更换</div>    
+  </div>
+
+  <div id="imageGallery_body">    
+    <img id="image_body" src="Yman.png"> </div>
+    <div id="previous_body">更换</div>    
+  </div>
+
+  <script>
+    let head, body;
+    $( document ).ready(function() {
+        var images_head = [
+            "Hman.png",
+            "Hman2.png",
+        ];
+        var imageIndex_head = 0;
+
+        $("#you").on("click", function(){ 
+            console.log("head");         
+            imageIndex_head = (imageIndex_head + images_head.length -1) % (images_head.length);    
+            $("#image_head").attr('src', images_head[imageIndex_head]);
+            head = imageIndex_head;
+        });
+    });
+
+    $( document ).ready(function() {
+        var images_body = [
+            "Yman.png",
+            "Yman2.png",
+        ];
+        var imageIndex_body = 0;
+
+        $("#youxia").on("click", function(){          
+            imageIndex_body = (imageIndex_body + images_body.length -1) % (images_body.length);    
+            $("#image_body").attr('src', images_body[imageIndex_body]);
+            body =  imageIndex_body;
+        });
+    });
+
+   // $( document ).ready(function() {
+   //   $("#button").on("click", function(){
+   //     console.log("button");  
+   //let url = "https://www.cnki.net/";
+   //   console.log(url);
+   //  httpDo(url);
+   //   });
+  // });
+     $("#button").on("click",function goTo(){
+      //let url = "https://vimsky.com/examples/usage/p5-js-httpdo-function.html";
+      // body.tostring();
+      // console.log(body); 
+      let url = (head+3)*10 + body+"/index.html";
+      console.log(url);
+      console.log("click")
+      window.location = (url) 
+      console.log(window.location)
+      });
+    </script>
+    
+
+</body>
+
+
+</html>
