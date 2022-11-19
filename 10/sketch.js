@@ -27,7 +27,7 @@ function setup() {
   marker_choose.add( plane );
 
   //video
-  video = createVideo("../1.mp4", vidLoad);
+  video = createVideo("1.mp4", vidLoad);
   videoControl = false;
 }
 
